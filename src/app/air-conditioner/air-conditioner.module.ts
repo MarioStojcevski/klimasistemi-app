@@ -15,7 +15,7 @@ import { MaterialModule } from '../material.module';
   imports: [
     CommonModule,
     AirConditionerRoutingModule,
-    MaterialModule,
+    MaterialModule
   ],
   exports: [
     AirConditionersComponent,
