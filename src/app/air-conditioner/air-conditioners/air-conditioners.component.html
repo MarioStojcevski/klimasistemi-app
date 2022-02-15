@@ -1,10 +1,116 @@
-<div class="mt-5 mb-5">
-    <p>test</p>
-    <p>test</p>
+<div class="mt-5 mb-5 grid-list">
+    <mat-grid-list *ngIf="!deviceXs" cols="2" rowHeight="550px">
+      <mat-grid-tile *ngFor="let ac of airConditioners">
+        <mat-card class="ac-card mat-elevation-z3">
 
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <button mat-button></button>
-    <p>test</p>
+          <mat-card-header>
+            <div class="row">
+              <div class="col-3">
+                <img id="ac-brand-image-lg" src="{{ac.brand.logoImageURL}}">
+              </div>
+              <div class="col-9" id="model-name-col">
+                <h2 matTooltip="{{ac.modelName}}">{{ac.modelName}}</h2>
+              </div>
+            </div>
+          </mat-card-header>
+
+          <div class="center-div pt-4">
+            <img id="ac-image" mat-card-image src="https://klimi.mk/public/storage/proizvodi/4ehg8179pPNXOtECTi9UxCQD9gYT9r8EKbp425V9.png">
+          </div>
+          <mat-card-content>
+            <div class="row">
+
+              <div class="col-8">
+                <p>
+                  <b>Type:</b> {{ac.type}}
+                </p>
+                <p>
+                  <b>Energy Class:</b> {{ac.energyClass}}
+                </p>
+                <p>
+                  <b>Power:</b> {{ac.power}}W
+                </p>
+                <p>
+                  <b>Cooling/Heating:</b> {{ac.maxCoolingCapacity}}℃ / {{ac.maxHeatingCapacity}}℃
+                </p>
+                <p>
+                  <b>Recommened Coverage Area:</b> {{ac.area}}㎡
+                </p>
+                <p>
+                  <b>Guarantee: </b>{{ac.guarantee}} months
+                </p>
+              </div>
+
+              <div class="col-4" style="float: right">
+                <h3>{{ ac.price | currency:'MKD'  }}</h3>
+              </div>
+
+            </div>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button color="primary" routerLink="{{ac.id}}">Details</button>
+            <button mat-raised-button color="primary" routerLink="./order/{{ac.id}}">Order</button>
+          </mat-card-actions>
+        </mat-card>
+      </mat-grid-tile>
+  </mat-grid-list>
+
+  <mat-grid-list *ngIf="deviceXs" cols="1" rowHeight="650px">
+    <mat-grid-tile *ngFor="let ac of airConditioners">
+      <mat-card class="ac-card mat-elevation-z3">
+
+        <mat-card-header>
+          
+          <div class="col-12">
+            <div class="row">
+              <img id="ac-brand-image-sm" src="{{ac.brand.logoImageURL}}">
+            </div>
+
+            <div class="row" id="model-name-col">
+              <h2 matTooltip="{{ac.modelName}}">{{ac.modelName}}</h2>
+            </div>
+          </div>
+          
+        </mat-card-header>
+
+        <div class="center-div pt-4">
+          <img id="ac-image" mat-card-image src="https://klimi.mk/public/storage/proizvodi/4ehg8179pPNXOtECTi9UxCQD9gYT9r8EKbp425V9.png">
+        </div>
+        <mat-card-content>
+          <div class="row">
+
+            <div class="col-8">
+              <p>
+                <b>Type:</b> {{ac.type}}
+              </p>
+              <p>
+                <b>Energy Class:</b> {{ac.energyClass}}
+              </p>
+              <p>
+                <b>Power:</b> {{ac.power}}W
+              </p>
+              <p>
+                <b>Cooling/Heating:</b> {{ac.maxCoolingCapacity}}℃ / {{ac.maxHeatingCapacity}}℃
+              </p>
+              <p>
+                <b>Recommened Coverage Area:</b> {{ac.area}}㎡
+              </p>
+              <p>
+                <b>Guarantee: </b>{{ac.guarantee}} months
+              </p>
+            </div>
+
+            <div class="col-4">
+              <h3>{{ ac.price | currency:'MKD'  }}</h3>
+            </div>
+
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary">Details</button>
+          <button mat-raised-button color="primary">Order</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
 </div>

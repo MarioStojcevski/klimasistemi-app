@@ -1,20 +1,30 @@
-mat-grid-tile {
-    background: lightblue;
-}
-
-img {
+#ac-image {
   max-width: 80%;
 }
 
-.mat-tile {
-  background-color: transparent;
+#ac-brand-image-lg {
+  max-width: 100%;
 }
 
-.mat-tile .mat-card {
-  margin: 10px;
+#ac-brand-image-sm {
+  max-width: 25%;
+}
+
+mat-grid-tile {
+  background-color: transparent;
 }
 
 .center-div {
   display: flex;
   justify-content: center;
+}
+
+mat-card {
+  margin: 10px;
+  height: 95%;
+}
+
+#model-name-col {
+  white-space: nowrap;
+  overflow: hidden;
 }

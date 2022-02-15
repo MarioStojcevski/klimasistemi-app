@@ -7,11 +7,14 @@ import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavModule } from './nav/nav.module';
 import { HttpClientModule } from '@angular/common/http';
-import { MatButtonModule } from '@angular/material/button';
+import { MaterialModule } from './material.module';
+import { AirConditionerModule } from './air-conditioner/air-conditioner.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,8 @@ import { MatButtonModule } from '@angular/material/button';
     NoopAnimationsModule,
     NgbModule,
     NavModule,
-    MatButtonModule
+    AirConditionerModule,
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

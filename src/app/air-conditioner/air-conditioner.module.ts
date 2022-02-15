@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { AirConditionerRoutingModule } from './air-conditioner-routing.module';
 import { AirConditionersComponent } from './air-conditioners/air-conditioners.component';
 import { DetailsComponent } from './details/details.component';
 import { MaterialModule } from '../material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { AirConditionerRoutingModule } from './air-conditioner-routing.module';
 
 
 @NgModule({
@@ -14,7 +15,9 @@ import { MaterialModule } from '../material.module';
   ],
   imports: [
     CommonModule,
-    AirConditionerRoutingModule,
+    MaterialModule,
+    FlexLayoutModule,
+    AirConditionerRoutingModule
   ],
   exports: [
     AirConditionersComponent,
