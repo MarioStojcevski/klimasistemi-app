@@ -7,7 +7,7 @@ import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavModule } from './nav/nav.module';
 import { HttpClientModule } from '@angular/common/http';
-import { MaterialModule } from './material.module';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,7 @@ import { MaterialModule } from './material.module';
     NoopAnimationsModule,
     NgbModule,
     NavModule,
-    MaterialModule
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
