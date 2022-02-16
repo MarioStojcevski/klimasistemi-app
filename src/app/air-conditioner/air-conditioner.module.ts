@@ -6,18 +6,22 @@ import { DetailsComponent } from './details/details.component';
 import { MaterialModule } from '../material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AirConditionerRoutingModule } from './air-conditioner-routing.module';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import { PriceSliderComponent } from './shared/price-slider/price-slider.component';
 
 
 @NgModule({
   declarations: [
     AirConditionersComponent,
-    DetailsComponent
+    DetailsComponent,
+    PriceSliderComponent
   ],
   imports: [
     CommonModule,
     MaterialModule,
     FlexLayoutModule,
-    AirConditionerRoutingModule
+    AirConditionerRoutingModule,
+    NgxSliderModule
   ],
   exports: [
     AirConditionersComponent,

@@ -1,12 +1,13 @@
 <div class="col-md-12 text-center">
-    <div class="error-template mb-5 mt-5">
-        <h1>Oops!</h1>
-        <h2>404 Not Found</h2>
-        <div class="error-details mb-5">
-            Sorry, an error has occured, Requested page not found!
+    <div class="mb-5 mt-5">
+        <h3>Oops!</h3>
+        <h1 class="text-danger">404 Not Found</h1>
+        <div class="mb-5">
+            <h3>Sorry, an error has occured, requested page not found!</h3>
         </div>
-        <div class="error-actions">
-            <button routerLink="" mat-raised-button color="primary">Take me back</button>
+        <div class="div-center">
+            <mat-progress-bar mode="indeterminate" color="accent" class="w-25"></mat-progress-bar>
         </div>
+        <button class="mt-2" routerLink="" mat-raised-button color="primary">Take me back</button>
     </div>
 </div>

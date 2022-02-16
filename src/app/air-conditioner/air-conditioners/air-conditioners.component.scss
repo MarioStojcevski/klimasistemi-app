@@ -22,9 +22,10 @@ mat-grid-tile {
 mat-card {
   margin: 10px;
   height: 95%;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 #model-name-col {
-  white-space: nowrap;
-  overflow: hidden;
+  text-overflow: ellipsis;
 }

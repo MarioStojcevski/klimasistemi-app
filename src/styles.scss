@@ -30,3 +30,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 @media only screen and (min-width: 1200px) {
 
 }
+
+.div-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

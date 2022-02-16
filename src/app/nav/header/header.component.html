@@ -1,6 +1,6 @@
 <mat-toolbar color="primary" class="header">
   <span>
-    <a class="navbar-brand" href="#">
+    <a matRipple class="navbar-brand" href="#">
       <img src="../../../assets/images/logo.png"
            width="30"
            height="30"
@@ -10,8 +10,13 @@
     </a>
   </span>
   <span>
-    <a class="nav-link" [routerLink]="['air-conditioners']">Air Conditioners</a>
+    <a matRipple class="nav-link" [routerLink]="['air-conditioners']">
+      <span>Air Conditioners</span>
+    </a>
   </span>
   <span class="spacer"></span>
-  <mat-icon class="icon" aria-hidden="false" aria-label="Example heart icon">login</mat-icon>
+  <button mat-icon-button>
+    <mat-icon class="mr-5 nav-link icon" [routerLink]="['air-conditioners']">login</mat-icon>
+  </button>
+  
 </mat-toolbar>

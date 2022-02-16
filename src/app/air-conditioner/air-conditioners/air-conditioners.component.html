@@ -1,4 +1,67 @@
-<div class="mt-5 mb-5 grid-list">
+<ng-container *ngIf="airConditioners.length == 0">
+  <div class="mt-5 div-center">
+    <mat-spinner color="accent"></mat-spinner>
+  </div>
+  <div class="mt-2 mb-5 text-center">
+    <h3>The products are loading, or non existing.</h3>
+  </div>
+</ng-container>
+
+<div>
+  <mat-card>
+    <mat-card-content>
+
+      <div class="row">
+        <section class="col-1">
+          <label>Sort by:</label>
+          <br>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1">Price</mat-radio-button>
+            <br>
+            <mat-radio-button value="2">Brand</mat-radio-button>
+          </mat-radio-group>
+        </section>
+
+        <section class="col-5">
+          <label>Price range:</label>
+          <br>
+          <app-price-slider></app-price-slider>
+        </section>
+
+        <section class="ml-4">
+          <mat-checkbox formControlName="pepperoni">2.5 kW</mat-checkbox>
+            <br>
+          <mat-checkbox formControlName="extracheese">3.5 kW</mat-checkbox>
+            <br>
+          <mat-checkbox formControlName="mushroom">5.5 kW</mat-checkbox>
+            <br>
+        </section>
+
+        <section class="ml-3">
+          <mat-checkbox formControlName="pepperoni">7.0 kW</mat-checkbox>
+            <br>
+          <mat-checkbox formControlName="extracheese">8.0 kW</mat-checkbox>
+            <br>
+          <mat-checkbox formControlName="mushroom">10.0 kW</mat-checkbox>
+            <br>
+        </section>
+
+        <section class="ml-3">
+          <mat-checkbox formControlName="pepperoni">12.0 kW</mat-checkbox>
+            <br>
+          <mat-checkbox formControlName="extracheese">15.0 kW</mat-checkbox>
+            <br>
+          <mat-checkbox formControlName="mushroom">15.0+ kW</mat-checkbox>
+            <br>
+        </section>
+
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div class="mt-5 mb-5 grid-list" *ngIf="airConditioners.length">
     <mat-grid-list *ngIf="!deviceXs" cols="2" rowHeight="550px">
       <mat-grid-tile *ngFor="let ac of airConditioners">
         <mat-card class="ac-card mat-elevation-z3">
@@ -49,7 +112,7 @@
           </mat-card-content>
           <mat-card-actions>
             <button mat-raised-button color="primary" routerLink="{{ac.id}}">Details</button>
-            <button mat-raised-button color="primary" routerLink="./order/{{ac.id}}">Order</button>
+            <button mat-raised-button color="accent" routerLink="./order/{{ac.id}}">Order</button>
           </mat-card-actions>
         </mat-card>
       </mat-grid-tile>
@@ -108,9 +171,9 @@
         </mat-card-content>
         <mat-card-actions>
           <button mat-raised-button color="primary">Details</button>
-          <button mat-raised-button color="primary">Order</button>
+          <button mat-raised-button color="accent">Order</button>
         </mat-card-actions>
       </mat-card>
     </mat-grid-tile>
-</mat-grid-list>
+  </mat-grid-list>
 </div>

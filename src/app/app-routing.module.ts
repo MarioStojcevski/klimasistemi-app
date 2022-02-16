@@ -4,14 +4,13 @@ import { AirConditionersComponent } from './air-conditioner/air-conditioners/air
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { path: 'air-conditioners', component: AirConditionersComponent, 
-    loadChildren: () => import('./air-conditioner/air-conditioner.module').then(m => m.AirConditionerModule)},
-  { path: '', component: AirConditionersComponent },
+  { path: 'air-conditioners', component: AirConditionersComponent },
+  { path: '', redirectTo: 'air-conditioners', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules})],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
