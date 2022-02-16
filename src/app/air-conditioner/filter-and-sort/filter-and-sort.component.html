@@ -1,0 +1,103 @@
+<mat-card class="mt-4 mat-elevation-z5" *ngIf="!deviceSmXs">
+    <mat-card-content>
+  
+      <div class="row">
+        <section class="col-2">
+          <label>Sort by:</label>
+            <br>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1">Price</mat-radio-button>
+              <br>
+            <mat-radio-button value="2">Brand</mat-radio-button>
+          </mat-radio-group>
+        </section>
+  
+        <section class="col-5">
+          <label>Price range:</label>
+            <br>
+          <app-price-slider></app-price-slider>
+        </section>
+  
+        <section class="ml-4">
+          <mat-checkbox formControlName="pepperoni">2.5 kW</mat-checkbox>
+            <br>
+          <mat-checkbox formControlName="extracheese">3.5 kW</mat-checkbox>
+            <br>
+          <mat-checkbox formControlName="mushroom">5.5 kW</mat-checkbox>
+            <br>
+        </section>
+  
+        <section class="ml-3">
+          <mat-checkbox formControlName="pepperoni">7.0 kW</mat-checkbox>
+            <br>
+           <mat-checkbox formControlName="extracheese">8.0 kW</mat-checkbox>
+            <br>
+          <mat-checkbox formControlName="mushroom">10.0 kW</mat-checkbox>
+            <br>
+        </section>
+  
+        <section class="ml-3">
+          <mat-checkbox formControlName="pepperoni">12.0 kW</mat-checkbox>
+            <br>
+          <mat-checkbox formControlName="extracheese">15.0 kW</mat-checkbox>
+            <br>
+          <mat-checkbox formControlName="mushroom">15.0+ kW</mat-checkbox>
+            <br>
+        </section>
+  
+      </div>
+  
+    </mat-card-content>
+</mat-card>
+
+<mat-card class="mt-4 mat-elevation-z5" *ngIf="deviceSmXs">
+  <mat-card-content>
+
+    <div class="row">
+      <section class="col-4">
+        <label>Sort by:</label>
+          <br>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1">Price</mat-radio-button>
+            <br>
+          <mat-radio-button value="2">Brand</mat-radio-button>
+        </mat-radio-group>
+      </section>
+
+      <section class="col-8">
+        <label>Price in MKD:</label>
+          <br>
+        <app-price-slider (newItemEvent)="readPrices($event)"></app-price-slider>
+      </section>
+    </div>
+    <div class="row div-center">
+      <section class="ml-4">
+        <mat-checkbox formControlName="pepperoni">2.5 kW</mat-checkbox>
+          <br>
+        <mat-checkbox formControlName="extracheese">3.5 kW</mat-checkbox>
+          <br>
+        <mat-checkbox formControlName="mushroom">5.5 kW</mat-checkbox>
+          <br>
+      </section>
+
+      <section class="ml-3">
+        <mat-checkbox formControlName="pepperoni">7.0 kW</mat-checkbox>
+          <br>
+         <mat-checkbox formControlName="extracheese">8.0 kW</mat-checkbox>
+          <br>
+        <mat-checkbox formControlName="mushroom">10.0 kW</mat-checkbox>
+          <br>
+      </section>
+
+      <section class="ml-3">
+        <mat-checkbox formControlName="pepperoni">12.0 kW</mat-checkbox>
+          <br>
+        <mat-checkbox formControlName="extracheese">15.0 kW</mat-checkbox>
+          <br>
+        <mat-checkbox formControlName="mushroom">15.0+ kW</mat-checkbox>
+          <br>
+      </section>
+    </div>
+
+  </mat-card-content>
+</mat-card>

@@ -13,7 +13,7 @@ export class AirConditionersComponent implements OnInit, OnDestroy {
 
   public airConditioners: IAirConditioner[] = [];
   public mediaSub!: Subscription;
-  public deviceXs: boolean = false;
+  public deviceSmXs: boolean = false;
   
   constructor(
     public mediaObserver: MediaObserver,
@@ -23,7 +23,7 @@ export class AirConditionersComponent implements OnInit, OnDestroy {
     this.getAirConditionersSorted('price');
     this.mediaSub = this.mediaObserver.media$.subscribe(
       ((result) => {
-        this.deviceXs = result.mqAlias === 'sm' || result.mqAlias === 'xs' ? true : false;
+        this.deviceSmXs = result.mqAlias === 'sm' || result.mqAlias === 'xs' ? true : false;
     }));
   }
 

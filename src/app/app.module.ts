@@ -11,6 +11,7 @@ import { MaterialModule } from './material.module';
 import { AirConditionerModule } from './air-conditioner/air-conditioner.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core'; 
 
 @NgModule({
   declarations: [
@@ -20,13 +21,13 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
+    AirConditionerModule,
     HttpClientModule,
     NgbModule,
     NavModule,
-    AirConditionerModule,
     MaterialModule,
-    NgxSliderModule
+    NgxSliderModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

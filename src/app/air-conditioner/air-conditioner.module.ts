@@ -7,25 +7,28 @@ import { MaterialModule } from '../material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AirConditionerRoutingModule } from './air-conditioner-routing.module';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
-import { PriceSliderComponent } from './shared/price-slider/price-slider.component';
+import { PriceSliderComponent } from './price-slider/price-slider.component';
+import { FilterAndSortComponent } from './filter-and-sort/filter-and-sort.component';
+import { OrderComponent } from './order/order.component';
 
 
 @NgModule({
   declarations: [
-    AirConditionersComponent,
+    PriceSliderComponent,
+    FilterAndSortComponent,
     DetailsComponent,
-    PriceSliderComponent
+    AirConditionersComponent,
+    OrderComponent,
   ],
   imports: [
     CommonModule,
+    AirConditionerRoutingModule,
     MaterialModule,
     FlexLayoutModule,
-    AirConditionerRoutingModule,
     NgxSliderModule
   ],
   exports: [
-    AirConditionersComponent,
-    DetailsComponent
+    AirConditionerRoutingModule
   ]
 })
 export class AirConditionerModule { }
