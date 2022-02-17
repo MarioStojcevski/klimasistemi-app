@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { IAirConditioner } from 'src/app/model/air-conditioner';
 import { ActivatedRoute } from '@angular/router';
 import { AirConditionerService } from 'src/app/service/air-conditioner.service';
-import { AirConditionerResponse } from 'src/app/model/response';
+import { MediaObserver } from '@angular/flex-layout';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-details',
@@ -12,21 +13,31 @@ import { AirConditionerResponse } from 'src/app/model/response';
 export class DetailsComponent implements OnInit {
 
   public ac!: IAirConditioner;
+  public mediaSub!: Subscription;
+  public deviceMdSmXs: boolean = false;
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private airConditionerService: AirConditionerService
+    private airConditionerService: AirConditionerService,
+    public mediaObserver: MediaObserver,
   ) { }
 
   ngOnInit(): void {
     this.loadAirConditioner();
+    this.mediaSub = this.mediaObserver.media$.subscribe(
+      ((result) => {
+        this.deviceMdSmXs = result.mqAlias === 'md' || result.mqAlias === 'sm' || result.mqAlias === 'xs' ? true : false;
+    }));
+  }
+
+  ngOnDestroy(): void {
+    this.mediaSub.unsubscribe();
   }
 
   loadAirConditioner(): void {
     const id = Number(this.activatedRoute.snapshot.paramMap.get('id'));
     this.airConditionerService.getAirConditionerById(id)
       .subscribe((airConditionerResponse: any) => {
-        console.log(airConditionerResponse);
         this.ac = airConditionerResponse.data.airConditioner;
       })
   }

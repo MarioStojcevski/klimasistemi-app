@@ -7,14 +7,13 @@ import { MaterialModule } from '../material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AirConditionerRoutingModule } from './air-conditioner-routing.module';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
-import { PriceSliderComponent } from './price-slider/price-slider.component';
 import { FilterAndSortComponent } from './filter-and-sort/filter-and-sort.component';
 import { OrderComponent } from './order/order.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
-    PriceSliderComponent,
     FilterAndSortComponent,
     DetailsComponent,
     AirConditionersComponent,
@@ -25,7 +24,9 @@ import { OrderComponent } from './order/order.component';
     AirConditionerRoutingModule,
     MaterialModule,
     FlexLayoutModule,
-    NgxSliderModule
+    NgxSliderModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     AirConditionerRoutingModule

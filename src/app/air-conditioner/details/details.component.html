@@ -1,14 +1,14 @@
-<mat-card class="ac-card mat-elevation-z3">
+<mat-card class="ac-card mat-elevation-z3 mt-5" *ngIf="!deviceMdSmXs">
 
-    <mat-card-header>
+    <mat-card-header class="center-div">
       
-      <div class="col-12">
-        <div class="row">
-          <img id="ac-brand-image-sm" src="{{ac.brand.logoImageURL}}">
+      <div class="row">
+        <div class="col-6">
+          <img id="ac-brand-image-lg" src="{{ac.brand.logoImageURL}}">
         </div>
 
-        <div class="row" id="model-name-col">
-          <h2 matTooltip="{{ac.modelName}}">{{ac.modelName}}</h2>
+        <div class="col-6" id="model-name-col">
+          <h1 matTooltip="{{ac.modelName}}">{{ac.modelName}}</h1>
         </div>
       </div>
       
@@ -17,8 +17,8 @@
     <div class="center-div pt-4">
       <img id="ac-image" mat-card-image src="https://klimi.mk/public/storage/proizvodi/4ehg8179pPNXOtECTi9UxCQD9gYT9r8EKbp425V9.png">
     </div>
-    <mat-card-content>
-      <div class="row">
+    <mat-card-content class="center-div">
+      <div class="row mt-3">
 
         <div class="col-8">
           <p>
@@ -42,7 +42,7 @@
         </div>
 
         <div class="col-4">
-          <h3>{{ ac.price | currency:'MKD'  }}</h3>
+          <h2>{{ ac.price | currency:'MKD'  }}</h2>
         </div>
 
       </div>
@@ -50,4 +50,59 @@
     <mat-card-actions>
       <button mat-raised-button color="accent" [routerLink]="['/air-conditioners']">Back</button>
     </mat-card-actions>
-  </mat-card>
+</mat-card>
+
+<!--For medium and smaller devices-->
+<mat-card class="ac-card mat-elevation-z3 mt-5" *ngIf="deviceMdSmXs">
+
+  <mat-card-header class="center-div">
+    
+    <div class="col" style="margin: auto; max-width: 300px;">
+      <div class="row">
+        <img id="ac-brand-image-sm" src="{{ac.brand.logoImageURL}}">
+      </div>
+
+      <div class="row" id="model-name-col">
+        <h1 matTooltip="{{ac.modelName}}">{{ac.modelName}}</h1>
+      </div>
+    </div>
+    
+  </mat-card-header>
+
+  <div class="center-div pt-4">
+    <img id="ac-image" mat-card-image src="https://klimi.mk/public/storage/proizvodi/4ehg8179pPNXOtECTi9UxCQD9gYT9r8EKbp425V9.png">
+  </div>
+  <mat-card-content class="center-div">
+    <div class="col mt-3">
+
+      <div class="col" style="margin: auto;">
+        <p>
+          <b>Type:</b> {{ac.type}}
+        </p>
+        <p>
+          <b>Energy Class:</b> {{ac.energyClass}}
+        </p>
+        <p>
+          <b>Power:</b> {{ac.power}}W
+        </p>
+        <p>
+          <b>Cooling/Heating:</b> {{ac.maxCoolingCapacity}}℃ / {{ac.maxHeatingCapacity}}℃
+        </p>
+        <p>
+          <b>Recommened Coverage Area:</b> {{ac.area}}㎡
+        </p>
+        <p>
+          <b>Guarantee: </b>{{ac.guarantee}} months
+        </p>
+      </div>
+
+      <div class="row" style="margin: auto; max-width: 150px;">
+        <h2>{{ ac.price | currency:'MKD'  }}</h2>
+      </div>
+
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="accent" [routerLink]="['/air-conditioners']">Back</button>
+  </mat-card-actions>
+</mat-card>
