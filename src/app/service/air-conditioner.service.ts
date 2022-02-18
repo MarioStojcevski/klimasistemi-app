@@ -11,31 +11,31 @@ import { FilterDto } from '../model/filter.dto';
 })
 export class AirConditionerService {
 
-  private readonly baseURL: string = environment.baseURL;
+  private base_URL: string = environment.baseURL;
 
   constructor(private http: HttpClient) { }
 
   getAirConditionerById(id: number): Observable<AirConditionerResponse> {
-    return this.http.get<AirConditionerResponse>(`${this.baseURL}/airConditioners/${id}`);
+    return this.http.get<AirConditionerResponse>(`${this.base_URL}/airConditioners/${id}`);
   }
 
   getAirConditionerByModelName(modelName: string): Observable<AirConditionerResponse> {
-    return this.http.get<AirConditionerResponse>(`${this.baseURL}/airConditioners/getByModelName/${modelName}`);
+    return this.http.get<AirConditionerResponse>(`${this.base_URL}/airConditioners/getByModelName/${modelName}`);
   }
 
   getAllAirConditioners(): Observable<AirConditionerResponse> {
-    return this.http.get<AirConditionerResponse>(`${this.baseURL}/airConditioners/list`);
+    return this.http.get<AirConditionerResponse>(`${this.base_URL}/airConditioners/list`);
   }
 
   getAllAirConditionersSorted(field: string): Observable<AirConditionerResponse> {
-    return this.http.get<AirConditionerResponse>(`${this.baseURL}/airConditioners/allSorted/${field}`);
+    return this.http.get<AirConditionerResponse>(`${this.base_URL}/airConditioners/allSorted/${field}`);
   }
 
   getAllAirConditionersFiltered(filter: FilterDto): Observable<AirConditionerResponse> {
-    return this.http.post<AirConditionerResponse>(`${this.baseURL}/airConditioners/allFiltered`, filter);
+    return this.http.post<AirConditionerResponse>(`${this.base_URL}/airConditioners/allFiltered`, filter);
   }
 
   getAllBrands(): Observable<AirConditionerBrandResponse> {
-    return this.http.get<AirConditionerBrandResponse>(`${this.baseURL}/airConditioners/listBrands`);
+    return this.http.get<AirConditionerBrandResponse>(`${this.base_URL}/airConditioners/listBrands`);
   }
 }

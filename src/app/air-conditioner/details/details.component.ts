@@ -19,8 +19,9 @@ export class DetailsComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private airConditionerService: AirConditionerService,
-    public mediaObserver: MediaObserver,
-  ) { }
+    public mediaObserver: MediaObserver
+    ) {
+  }
 
   ngOnInit(): void {
     this.loadAirConditioner();
