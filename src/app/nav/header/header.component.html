@@ -1,6 +1,6 @@
 <mat-toolbar color="primary" class="header">
-  <span>
-    <a matRipple class="navbar-brand" [routerLink]="['/air-conditioners']">
+  <span matRipple>
+    <a class="navbar-brand" [routerLink]="['/air-conditioners']">
       <img src="../../../assets/images/logo.png"
            width="30"
            height="30"
@@ -9,14 +9,20 @@
       <span class="ml-2">klimasistemi</span>
     </a>
   </span>
-  <span>
-    <a matRipple class="nav-link" [routerLink]="['/air-conditioners']">
+  <span matRipple>
+    <a class="nav-link" [routerLink]="['/air-conditioners']">
       <span>Air Conditioners</span>
     </a>
   </span>
+  <span matRipple>
+    <a href="mailto:timmont2000@gmail.com" target="_blank">Send mail</a>
+  </span>
   <span class="spacer"></span>
+  <span matRipple>
+    +389 78 202 309
+  </span>
   <button mat-icon-button>
-    <mat-icon class="nav-link icon" [routerLink]="['/air-conditioners']">login</mat-icon>
+    <mat-icon class="nav-link icon" [routerLink]="['/air-conditioners']">shopping_cart</mat-icon>
   </button>
   
 </mat-toolbar>
