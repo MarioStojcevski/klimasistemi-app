@@ -12,6 +12,7 @@ import { filter, Subscription } from 'rxjs';
 export class AirConditionersComponent implements OnInit, OnDestroy {
 
   public airConditioners: IAirConditioner[] = [];
+  public noAirConditioners: boolean = false;
   public mediaSub!: Subscription;
   public deviceSmXs: boolean = false;
   
@@ -33,6 +34,10 @@ export class AirConditionersComponent implements OnInit, OnDestroy {
 
   getFiltered(filteredAirConditioners: IAirConditioner[]): void {
     this.airConditioners = filteredAirConditioners;
+  }
+
+  getSize(size: number) {
+    this.noAirConditioners = size == 0 ? true : false;
   }
 
   public getAirConditionersSorted(field: string): void {

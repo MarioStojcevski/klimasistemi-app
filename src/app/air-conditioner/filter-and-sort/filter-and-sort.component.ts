@@ -6,6 +6,7 @@ import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { AirConditionerService } from 'src/app/service/air-conditioner.service';
 import { Output, EventEmitter } from '@angular/core';
 import { IAirConditioner } from 'src/app/model/air-conditioner';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-filter-and-sort',
@@ -15,6 +16,7 @@ import { IAirConditioner } from 'src/app/model/air-conditioner';
 export class FilterAndSortComponent implements OnInit {
 
   @Output() airConditionersFiltered = new EventEmitter<IAirConditioner[]>();
+  @Output() size = new EventEmitter<number>();
 
   public mediaSub!: Subscription;
   public deviceSmXs: boolean = false;
@@ -91,12 +93,24 @@ export class FilterAndSortComponent implements OnInit {
       powerArray: formattedPowerArray,
     };
 
-    this.airConditionerService.getAllAirConditionersFiltered(this.filterDto)
+    if(this.filterDto.maxPrice - this.filterDto.minPrice > 0) {
+      this.airConditionerService.getAllAirConditionersFiltered(this.filterDto)
       .subscribe((result) => {
         this.airConditionersFiltered.emit(result.data.airConditioners);
+        this.size.emit(result.size);
       }, (error) => {
         console.log(error);
       });
+    } else {
+      Swal.fire({
+        titleText: "Error!",
+        text: "Max price cannot be smaller or equal to Min price!",
+        icon: "error",
+        confirmButtonColor: "#E91E63"
+      })
+    }
+
+    
   }
 
 }
