@@ -1,4 +1,4 @@
-<app-filter-and-sort></app-filter-and-sort>
+<app-filter-and-sort (airConditionersFiltered)="getFiltered($event)"></app-filter-and-sort>
 
 <ng-container *ngIf="airConditioners.length == 0">
   <div class="mt-5 div-center">

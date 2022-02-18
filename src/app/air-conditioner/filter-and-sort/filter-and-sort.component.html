@@ -14,7 +14,7 @@
           </section>
     
           <section class="col-5">
-            <label>Min price(MKD):</label>
+            <label>Min price:</label>
             <mat-slider 
               [min]="0"
               [max]="200000"
@@ -22,9 +22,9 @@
               formControlName="minPriceControl">
 
             </mat-slider>
-            {{filterForm.get('minPriceControl')?.value}}
+            {{filterForm.get('minPriceControl')?.value | currency:'MKD '}}
               <br>
-            <label>Max price(MKD):</label>
+            <label>Max price:</label>
             <mat-slider 
               [min]="0"
               [max]="200000"
@@ -32,7 +32,7 @@
               formControlName="maxPriceControl">
 
             </mat-slider>
-            {{filterForm.get('maxPriceControl')?.value}}
+            {{filterForm.get('maxPriceControl')?.value | currency:'MKD '}}
           </section>
 
           <section class="col-5" >

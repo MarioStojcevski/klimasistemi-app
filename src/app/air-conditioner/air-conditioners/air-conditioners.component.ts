@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { IAirConditioner } from 'src/app/model/air-conditioner';
 import { AirConditionerService } from 'src/app/service/air-conditioner.service';
 import { MediaObserver } from '@angular/flex-layout';
-import { Subscription } from 'rxjs';
+import { filter, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-air-conditioners',
@@ -29,6 +29,10 @@ export class AirConditionersComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.mediaSub.unsubscribe();
+  }
+
+  getFiltered(filteredAirConditioners: IAirConditioner[]): void {
+    this.airConditioners = filteredAirConditioners;
   }
 
   public getAirConditionersSorted(field: string): void {

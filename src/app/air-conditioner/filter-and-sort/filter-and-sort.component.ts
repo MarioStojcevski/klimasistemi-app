@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { FilterDto } from 'src/app/model/filter.dto';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { AirConditionerService } from 'src/app/service/air-conditioner.service';
+import { Output, EventEmitter } from '@angular/core';
+import { IAirConditioner } from 'src/app/model/air-conditioner';
 
 @Component({
   selector: 'app-filter-and-sort',
@@ -11,6 +13,8 @@ import { AirConditionerService } from 'src/app/service/air-conditioner.service';
   styleUrls: ['./filter-and-sort.component.scss']
 })
 export class FilterAndSortComponent implements OnInit {
+
+  @Output() airConditionersFiltered = new EventEmitter<IAirConditioner[]>();
 
   public mediaSub!: Subscription;
   public deviceSmXs: boolean = false;
@@ -77,18 +81,21 @@ export class FilterAndSortComponent implements OnInit {
   }
 
   public filter(): void {
+    let unFormattedPowerArray: string[] = this.filterForm.get('powerArrayControl')?.value;
+    let formattedPowerArray: number[] = unFormattedPowerArray.map(x => +x*1000);
+
     this.filterDto = {
       sortBy: this.filterForm.get('sortByControl')?.value,
       minPrice: this.filterForm.get('minPriceControl')?.value,
       maxPrice: this.filterForm.get('maxPriceControl')?.value,
-      powerArray: this.filterForm.get('powerArrayControl')?.value,
+      powerArray: formattedPowerArray,
     };
-
-    console.log(this.filterDto);
 
     this.airConditionerService.getAllAirConditionersFiltered(this.filterDto)
       .subscribe((result) => {
-        console.log(result);
+        this.airConditionersFiltered.emit(result.data.airConditioners);
+      }, (error) => {
+        console.log(error);
       });
   }
 
