@@ -1,0 +1,60 @@
+{
+    "APP": {
+        "ACTIONS": {
+            "DETAILS": "Детали",
+            "ORDER": "Нарачај",
+            "BACK": "Назад"
+        },
+        "HEADER": {
+            "TITLE": "климасистеми",
+            "AIR_CONDITIONERS": "Клима уреди",
+            "SEND_MAIL": "Испрати мејл"
+        },
+        "AIR_CONDITIONERS": {
+            "LIST": {
+                "AC_TYPE": "Тип:",
+                "AC_ENERGY_CLASS": "Енергетска класа:",
+                "AC_POWER": "Моќност:",
+                "AC_COOLING_HEATING": "Ладење/Греење:",
+                "AC_AREA": "Покривност:",
+                "AC_GUARANTEE": "Гаранција:",
+                "CANNOT_FIND_PRODUCTS": "Продуктите не се пронајдени!",
+                "THE_PRODUCTS_ARE_LOADING": "Продуктите се вчитуваат или не постојат!",
+                "MONTHS": "месеци"
+            },
+            "ORDER": {
+                "COMING_SOON": "Наскоро!",
+                "FEATURE_NOT_AVAILABLE": "Нарачувањето онлајн во моментов не функционира!"
+            },
+            "FILTER": {
+                "SORT_BY": "Сортирај по:",
+                "PRICE": "Цена",
+                "BRAND": "Бренд",
+                "MIN_PRICE": "Цена од",
+                "MAX_PRICE": "Цена до",
+                "POWER_TEXT": "Филтрирај по моќност:",
+                "FILTER": "Филтрирај"
+            }
+        },
+        "SWAL": {
+            "TITLES": {
+                "ERROR": "Грешка"
+            },
+            "MESSAGES": {
+                "MAX_MIN_PRICE": "\"Цена од\" не може да биде поголема од \"Цена до\"!"
+            },
+            "BUTTONS": {
+                "OK": "Во ред"
+            }
+        },
+        "PAGE_NOT_FOUND": {
+            "OOPS": "Упс",
+            "NOT_FOUND": "Грешка 404!",
+            "TEXT": "Се извинуваме, се случи грешка! Страницата што ја баравте не беше пронајдена!",
+            "TAKE_ME_BACK": "Врати ме назад"
+        },
+        "FOOTER": {
+            "DEVELOPED_AND_MAINTAINED": "Изработено и одржувано од"
+        }
+    }
+}

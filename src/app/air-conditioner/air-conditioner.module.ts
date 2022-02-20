@@ -10,6 +10,7 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { FilterAndSortComponent } from './filter-and-sort/filter-and-sort.component';
 import { OrderComponent } from './order/order.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -26,7 +27,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FlexLayoutModule,
     NgxSliderModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TranslateModule.forChild({
+      extend: true
+    })
   ],
   exports: [
     AirConditionerRoutingModule

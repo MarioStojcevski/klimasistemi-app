@@ -1,0 +1,60 @@
+{
+    "APP": {
+        "ACTIONS": {
+            "DETAILS": "Detajet",
+            "ORDER": "Rendit",
+            "BACK": "Mbrapa"
+        },
+        "HEADER": {
+            "TITLE": "klimasistemi",
+            "AIR_CONDITIONERS": "Kondicionerët",
+            "SEND_MAIL": "Dërgo postë"
+        },
+        "AIR_CONDITIONERS": {
+            "LIST": {
+                "AC_TYPE": "Lloji:",
+                "AC_ENERGY_CLASS": "Klasa e energjisë:",
+                "AC_POWER": "Fuqia:",
+                "AC_COOLING_HEATING": "Ftohje/Ngrohje:",
+                "AC_AREA": "Mbulimi i zonës:",
+                "AC_GUARANTEE": "Garanci:",
+                "CANNOT_FIND_PRODUCTS": "Produktet nuk u gjetën!",
+                "THE_PRODUCTS_ARE_LOADING": "Produktet po ngarkohen ose nuk ekzistojnë!",
+                "MONTHS": "muaj"
+            },
+            "ORDER": {
+                "COMING_SOON": "Së shpejti!",
+                "FEATURE_NOT_AVAILABLE": "Porositja online nuk është e disponueshme për momentin!"
+            },
+            "FILTER": {
+                "SORT_BY": "Ndaj sipas:",
+                "PRICE": "Çmimi",
+                "BRAND": "Markë",
+                "MIN_PRICE": "Çmimi minimal",
+                "MAX_PRICE": "Çmimi maksimal",
+                "POWER_TEXT": "Filtro sipas fuqisë:",
+                "FILTER": "Filtro"
+            }
+        },
+        "SWAL": {
+            "TITLES": {
+                "ERROR": "Gabim"
+            },
+            "MESSAGES": {
+                "MAX_MIN_PRICE": "\"Çmimi minimal\" nuk mund të jetë më i madh se \"Çmimi maksimal\"!"
+            },
+            "BUTTONS": {
+                "OK": "Mirë"
+            }
+        },
+        "PAGE_NOT_FOUND": {
+            "OOPS": "Oops",
+            "NOT_FOUND": "Gabim 404!",
+            "TEXT": "Na vjen keq, ka pasur një gabim! Faqja që keni kërkuar nuk u gjet!",
+            "TAKE_ME_BACK": "Më ktheni"
+        },
+        "FOOTER": {
+            "DEVELOPED_AND_MAINTAINED": "Zhvilluar dhe mirëmbajtur nga"
+        }
+    }
+}

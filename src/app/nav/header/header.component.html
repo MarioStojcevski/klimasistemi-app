@@ -6,16 +6,16 @@
            height="30"
            class="d-inline-block align-top"
            loading="lazy">
-      <span class="ml-2">klimasistemi</span>
+      <span class="ml-2">{{ "APP.HEADER.TITLE" | translate }}</span>
     </a>
   </span>
   <span matRipple>
     <a class="nav-link" [routerLink]="['/air-conditioners']">
-      <span>Air Conditioners</span>
+      <span>{{ "APP.HEADER.AIR_CONDITIONERS" | translate }}</span>
     </a>
   </span>
   <span matRipple>
-    <a href="mailto:timmont2000@gmail.com" target="_blank">Send mail</a>
+    <a href="mailto:timmont2000@gmail.com" target="_blank">{{ "APP.HEADER.SEND_MAIL" | translate }}</a>
   </span>
   <span class="spacer"></span>
   <span matRipple>
@@ -24,6 +24,13 @@
   <button mat-icon-button>
     <mat-icon class="nav-link icon" [routerLink]="['/air-conditioners']">shopping_cart</mat-icon>
   </button>
+  <span class="pl-3" matRipple>
+      <mat-select (selectionChange)="changeLanguage($event.value)">
+        <mat-option value="mk">mk</mat-option>
+        <mat-option value="alb">alb</mat-option>
+        <mat-option value="en">en</mat-option>
+      </mat-select>
+  </span>
   
 </mat-toolbar>
 
@@ -37,18 +44,18 @@
             height="30"
             class="d-inline-block align-top"
             loading="lazy">
-        <span class="ml-2">klimasistemi</span>
+        <span class="ml-2">{{"APP.HEADER.TITLE" | translate}}</span>
       </a>
     </span>
     <span matRipple>
       <a class="nav-link" [routerLink]="['/air-conditioners']">
-        <span>Air Conditioners</span>
+        <span>{{ "APP.HEADER.AIR_CONDITIONERS" | translate }}</span>
       </a>
     </span>
   </mat-toolbar-row>
   <mat-toolbar-row>
     <span matRipple>
-      <a href="mailto:timmont2000@gmail.com" target="_blank">Send mail</a>
+      <a href="mailto:timmont2000@gmail.com" target="_blank">{{"APP.HEADER.SEND_MAIL" | translate}}</a>
     </span>
     <span class="spacer"></span>
     <span matRipple>
@@ -57,5 +64,12 @@
     <button mat-icon-button>
       <mat-icon class="nav-link icon" [routerLink]="['/air-conditioners']">shopping_cart</mat-icon>
     </button>
+    <span class="pl-3" matRipple>
+      <mat-select (selectionChange)="changeLanguage($event.value)">
+        <mat-option value="mk">mk</mat-option>
+        <mat-option value="alb">alb</mat-option>
+        <mat-option value="en">en</mat-option>
+      </mat-select>
+    </span>
   </mat-toolbar-row>
 </mat-toolbar>

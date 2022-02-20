@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
+import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -12,14 +13,22 @@ export class HeaderComponent implements OnInit {
   public mediaSub!: Subscription;
   public deviceXs: boolean = false;
 
-  constructor(public mediaObserver: MediaObserver) { }
+  constructor(
+    private translate: TranslateService,
+    private mediaObserver: MediaObserver) {
+  }
 
   ngOnInit(): void {
     this.mediaSub = this.mediaObserver.media$.subscribe(
       ((result) => {
-        console.log(result.mqAlias);
         this.deviceXs = result.mqAlias === 'xs' ? true : false;
     }));
+  }
+
+  changeLanguage(language: string): void {
+    this.translate.use(language);
+    localStorage.setItem('language', language);
+    window.location.reload();
   }
 
 }

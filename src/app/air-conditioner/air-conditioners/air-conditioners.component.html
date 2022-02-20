@@ -2,7 +2,7 @@
 
 <ng-container *ngIf="noAirConditioners">
   <div class="mt-2 mb-5 text-center">
-    <h3>Cannot find products with given filter criteria.</h3>
+    <h3>{{ "APP.AIR_CONDITIONERS.LIST.CANNOT_FIND_PRODUCTS" | translate }}</h3>
   </div>
 </ng-container>
 
@@ -11,7 +11,7 @@
     <mat-spinner color="accent"></mat-spinner>
   </div>
   <div class="mt-2 mb-5 text-center">
-    <h3>The products are loading, or non existing.</h3>
+    <h3>{{ "APP.AIR_CONDITIONERS.LIST.THE_PRODUCTS_ARE_LOADING" | translate }}.</h3>
   </div>
 </ng-container>
 
@@ -39,22 +39,28 @@
 
               <div class="col-8">
                 <p>
-                  <b>Type:</b> {{ac.type}}
+                  <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_TYPE" | translate }}</b> 
+                  {{ac.type}}
                 </p>
                 <p>
-                  <b>Energy Class:</b> {{ac.energyClass}}
+                  <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_ENERGY_CLASS" | translate }}</b> 
+                  {{ac.energyClass}}
                 </p>
                 <p>
-                  <b>Power:</b> {{ac.power}}W
+                  <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_POWER" | translate }}</b> 
+                  {{ac.power}}W
                 </p>
                 <p>
-                  <b>Cooling/Heating:</b> {{ac.maxCoolingCapacity}}℃ / {{ac.maxHeatingCapacity}}℃
+                  <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_COOLING_HEATING" | translate }}</b> 
+                  {{ac.workingTemperatureFrom}}℃ / {{ac.workingTemperatureTo}}℃
                 </p>
                 <p>
-                  <b>Recommened Coverage Area:</b> {{ac.area}}㎡
+                  <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_AREA" | translate }}</b> 
+                  {{ac.area}}㎡
                 </p>
                 <p>
-                  <b>Guarantee: </b>{{ac.guarantee}} months
+                  <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_GUARANTEE" | translate }}</b> 
+                  {{ac.guarantee}} {{ "APP.AIR_CONDITIONERS.LIST.MONTHS" | translate }}
                 </p>
               </div>
 
@@ -65,13 +71,18 @@
             </div>
           </mat-card-content>
           <mat-card-actions>
-            <button mat-raised-button color="primary" [routerLink]="['./', ac.id]">Details</button>
-            <button mat-raised-button color="accent" [routerLink]="['./order', ac.id]">Order</button>
+            <button mat-raised-button color="primary" [routerLink]="['./', ac.id]">
+              {{ "APP.ACTIONS.DETAILS" | translate }}
+            </button>
+            <button mat-raised-button color="accent" [routerLink]="['./order', ac.id]">
+              {{ "APP.ACTIONS.ORDER" | translate }}
+            </button>
           </mat-card-actions>
         </mat-card>
       </mat-grid-tile>
   </mat-grid-list>
 
+  <!-- For small device-->
   <mat-grid-list *ngIf="deviceSmXs" cols="1" rowHeight="650px">
     <mat-grid-tile *ngFor="let ac of airConditioners">
       <mat-card class="ac-card mat-elevation-z3">
@@ -98,34 +109,44 @@
 
             <div class="col-8">
               <p>
-                <b>Type:</b> {{ac.type}}
+                <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_TYPE" | translate }}</b> 
+                {{ac.type}}
               </p>
               <p>
-                <b>Energy Class:</b> {{ac.energyClass}}
+                <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_ENERGY_CLASS" | translate }}</b> 
+                {{ac.energyClass}}
               </p>
               <p>
-                <b>Power:</b> {{ac.power}}W
+                <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_POWER" | translate }}</b> 
+                {{ac.power}}W
               </p>
               <p>
-                <b>Cooling/Heating:</b> {{ac.maxCoolingCapacity}}℃ / {{ac.maxHeatingCapacity}}℃
+                <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_COOLING_HEATING" | translate }}</b> 
+                {{ac.workingTemperatureFrom}}℃ / {{ac.workingTemperatureTo}}℃
               </p>
               <p>
-                <b>Recommened Coverage Area:</b> {{ac.area}}㎡
+                <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_AREA" | translate }}</b> 
+                {{ac.area}}㎡
               </p>
               <p>
-                <b>Guarantee: </b>{{ac.guarantee}} months
+                <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_GUARANTEE" | translate }}</b> 
+                {{ac.guarantee}} {{ "APP.AIR_CONDITIONERS.LIST.MONTHS" | translate }}
               </p>
             </div>
 
-            <div class="col-4">
+            <div class="col-4" style="float: right">
               <h3>{{ ac.price | currency:'MKD'  }}</h3>
             </div>
 
           </div>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-raised-button color="primary" [routerLink]="['./', ac.id]">Details</button>
-          <button mat-raised-button color="accent" [routerLink]="['./order', ac.id]">Order</button>
+          <button mat-raised-button color="primary" [routerLink]="['./', ac.id]">
+            {{ "APP.ACTIONS.DETAILS" | translate }}
+          </button>
+          <button mat-raised-button color="accent" [routerLink]="['./order', ac.id]">
+            {{ "APP.ACTIONS.ORDER" | translate }}
+          </button>
         </mat-card-actions>
       </mat-card>
     </mat-grid-tile>

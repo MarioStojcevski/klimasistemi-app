@@ -12,6 +12,7 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { MatSliderModule } from '@angular/material/slider';
     MatRippleModule,
     MatCheckboxModule,
     MatRadioModule,
-    MatSliderModule
+    MatSliderModule,
+    MatSelectModule
   ],
   exports: [
     MatGridListModule,
@@ -43,7 +45,8 @@ import { MatSliderModule } from '@angular/material/slider';
     MatRippleModule,
     MatCheckboxModule,
     MatRadioModule,
-    MatSliderModule
+    MatSliderModule,
+    MatSelectModule
   ]
 })
 export class MaterialModule { }

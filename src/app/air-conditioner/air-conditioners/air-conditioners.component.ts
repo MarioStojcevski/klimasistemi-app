@@ -3,6 +3,7 @@ import { IAirConditioner } from 'src/app/model/air-conditioner';
 import { AirConditionerService } from 'src/app/service/air-conditioner.service';
 import { MediaObserver } from '@angular/flex-layout';
 import { filter, Subscription } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-air-conditioners',
@@ -18,6 +19,7 @@ export class AirConditionersComponent implements OnInit, OnDestroy {
   
   constructor(
     public mediaObserver: MediaObserver,
+    private translate: TranslateService,
     private airConditionerService: AirConditionerService) { }
 
   ngOnInit(): void {

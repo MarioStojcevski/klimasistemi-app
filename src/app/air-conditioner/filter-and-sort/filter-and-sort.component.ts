@@ -7,6 +7,7 @@ import { AirConditionerService } from 'src/app/service/air-conditioner.service';
 import { Output, EventEmitter } from '@angular/core';
 import { IAirConditioner } from 'src/app/model/air-conditioner';
 import Swal from 'sweetalert2';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-filter-and-sort',
@@ -38,6 +39,7 @@ export class FilterAndSortComponent implements OnInit {
   constructor(
     public fb: FormBuilder,
     private airConditionerService: AirConditionerService,
+    private translate: TranslateService,
     public mediaObserver: MediaObserver) {
     this.filterDto = {
       sortBy: '',
@@ -103,9 +105,10 @@ export class FilterAndSortComponent implements OnInit {
       });
     } else {
       Swal.fire({
-        titleText: "Error!",
-        text: "Max price cannot be smaller or equal to Min price!",
+        titleText: this.translate.instant("APP.SWAL.TITLES.ERROR"),
+        text: this.translate.instant("APP.SWAL.MESSAGES.MAX_MIN_PRICE"),
         icon: "error",
+        confirmButtonText: this.translate.instant("APP.SWAL.BUTTONS.OK"),
         confirmButtonColor: "#E91E63"
       })
     }

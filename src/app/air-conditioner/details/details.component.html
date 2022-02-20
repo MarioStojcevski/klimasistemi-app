@@ -25,33 +25,41 @@
 
         <div class="col-8">
           <p>
-            <b>Type:</b> {{ac.type}}
+            <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_TYPE" | translate }}</b> 
+            {{ac.type}}
           </p>
           <p>
-            <b>Energy Class:</b> {{ac.energyClass}}
+            <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_ENERGY_CLASS" | translate }}</b> 
+            {{ac.energyClass}}
           </p>
           <p>
-            <b>Power:</b> {{ac.power}}W
+            <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_POWER" | translate }}</b> 
+            {{ac.power}}W
           </p>
           <p>
-            <b>Cooling/Heating:</b> {{ac.maxCoolingCapacity}}℃ / {{ac.maxHeatingCapacity}}℃
+            <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_COOLING_HEATING" | translate }}</b> 
+            {{ac.workingTemperatureFrom}}℃ / {{ac.workingTemperatureTo}}℃
           </p>
           <p>
-            <b>Recommened Coverage Area:</b> {{ac.area}}㎡
+            <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_AREA" | translate }}</b> 
+            {{ac.area}}㎡
           </p>
           <p>
-            <b>Guarantee: </b>{{ac.guarantee}} months
+            <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_GUARANTEE" | translate }}</b> 
+            {{ac.guarantee}} {{ "APP.AIR_CONDITIONERS.LIST.MONTHS" | translate }}
           </p>
         </div>
 
-        <div class="col-4">
-          <h2>{{ ac.price | currency:'MKD'  }}</h2>
+        <div class="col-4" style="float: right">
+          <h3>{{ ac.price | currency:'MKD'  }}</h3>
         </div>
 
       </div>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button color="accent" [routerLink]="['/air-conditioners']">Back</button>
+      <button mat-raised-button color="accent" [routerLink]="['/air-conditioners']">
+        {{ "APP.ACTIONS.BACK" | translate }}
+      </button>
     </mat-card-actions>
 </mat-card>
 
@@ -83,22 +91,28 @@
 
       <div class="col" style="margin: auto;">
         <p>
-          <b>Type:</b> {{ac.type}}
+          <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_TYPE" | translate }}</b> 
+          {{ac.type}}
         </p>
         <p>
-          <b>Energy Class:</b> {{ac.energyClass}}
+          <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_ENERGY_CLASS" | translate }}</b> 
+          {{ac.energyClass}}
         </p>
         <p>
-          <b>Power:</b> {{ac.power}}W
+          <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_POWER" | translate }}</b> 
+          {{ac.power}}W
         </p>
         <p>
-          <b>Cooling/Heating:</b> {{ac.maxCoolingCapacity}}℃ / {{ac.maxHeatingCapacity}}℃
+          <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_COOLING_HEATING" | translate }}</b> 
+          {{ac.workingTemperatureFrom}}℃ / {{ac.workingTemperatureTo}}℃
         </p>
         <p>
-          <b>Recommened Coverage Area:</b> {{ac.area}}㎡
+          <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_AREA" | translate }}</b> 
+          {{ac.area}}㎡
         </p>
         <p>
-          <b>Guarantee: </b>{{ac.guarantee}} months
+          <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_GUARANTEE" | translate }}</b> 
+          {{ac.guarantee}} {{ "APP.AIR_CONDITIONERS.LIST.MONTHS" | translate }}
         </p>
       </div>
 
@@ -109,6 +123,8 @@
     </div>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button color="accent" [routerLink]="['/air-conditioners']">Back</button>
+    <button mat-raised-button color="accent" [routerLink]="['/air-conditioners']">
+      {{ "APP.ACTIONS.BACK" | translate}}
+    </button>
   </mat-card-actions>
 </mat-card>

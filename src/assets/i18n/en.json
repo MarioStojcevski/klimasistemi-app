@@ -1,0 +1,60 @@
+{
+    "APP": {
+        "ACTIONS": {
+            "DETAILS": "Details",
+            "ORDER": "Order",
+            "BACK": "Back"
+        },
+        "HEADER": {
+            "TITLE": "klimasistemi",
+            "AIR_CONDITIONERS": "Air Conditioners",
+            "SEND_MAIL": "Send mail"
+        },
+        "AIR_CONDITIONERS": {
+            "LIST": {
+                "AC_TYPE": "Type:",
+                "AC_ENERGY_CLASS": "Energy class:",
+                "AC_POWER": "Power:",
+                "AC_COOLING_HEATING": "Cooling/Heating:",
+                "AC_AREA": "Area coverage:",
+                "AC_GUARANTEE": "Guarantee:",
+                "CANNOT_FIND_PRODUCTS": "Products not found!",
+                "THE_PRODUCTS_ARE_LOADING": "Products are loading or non existing!",
+                "MONTHS": "months"
+            },
+            "ORDER": {
+                "COMING_SOON": "Soon!",
+                "FEATURE_NOT_AVAILABLE": "Ordering online is not available at the moment!"
+            },
+            "FILTER": {
+                "SORT_BY": "Sort by:",
+                "PRICE": "Price",
+                "BRAND": "Brand",
+                "MIN_PRICE": "Min price",
+                "MAX_PRICE": "Max price",
+                "POWER_TEXT": "Filter by power:",
+                "FILTER": "Filter"
+            }
+        },
+        "SWAL": {
+            "TITLES": {
+                "ERROR": "Error"
+            },
+            "MESSAGES": {
+                "MAX_MIN_PRICE": "\"Min price\" can not be bigger than \"Max price\"!"
+            },
+            "BUTTONS": {
+                "OK": "OK"
+            }
+        },
+        "PAGE_NOT_FOUND": {
+            "OOPS": "Oops",
+            "NOT_FOUND": "Error 404!",
+            "TEXT": "We are sorry, There has been a mistake! The page you searched for was not found!",
+            "TAKE_ME_BACK": "Take me back"
+        },
+        "FOOTER": {
+            "DEVELOPED_AND_MAINTAINED": "Developed and maintained by"
+        }
+    }
+}
