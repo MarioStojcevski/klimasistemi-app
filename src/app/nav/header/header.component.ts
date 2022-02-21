@@ -27,8 +27,6 @@ export class HeaderComponent implements OnInit {
 
   changeLanguage(language: string): void {
     this.translate.use(language);
-    localStorage.setItem('language', language);
-    window.location.reload();
   }
 
 }
