@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { AirConditionerBrandResponse, AirConditionerResponse } from '../model/response';
-import { FilterDto } from '../model/filter.dto';
+import { AirConditionerBrandResponse, AirConditionerResponse } from '../model/helper/response';
+import { FilterDto } from '../model/helper/filter.dto';
 
 
 @Injectable({
@@ -36,6 +36,6 @@ export class AirConditionerService {
   }
 
   getAllBrands(): Observable<AirConditionerBrandResponse> {
-    return this.http.get<AirConditionerBrandResponse>(`${this.base_URL}/airConditioners/listBrands`);
+    return this.http.get<AirConditionerBrandResponse>(`${this.base_URL}/brands/listBrands`);
   }
 }

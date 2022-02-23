@@ -1,6 +1,6 @@
 import { HttpStatusCode } from "@angular/common/http";
-import { IAirConditioner } from "./air-conditioner";
-import { IAirConditionerBrand } from "./air-conditioner-brand";
+import { IAirConditioner } from "src/app/model/air-conditioner";
+import { IAirConditionerBrand } from "src/app/model/air-conditioner-brand";
 
 export interface Response {
     timeStamp: Date;

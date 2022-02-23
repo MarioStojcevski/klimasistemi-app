@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
-import { Observable, Subscription } from 'rxjs';
-import { FilterDto } from 'src/app/model/filter.dto';
+import { Subscription } from 'rxjs';
+import { FilterDto } from 'src/app/model/helper/filter.dto';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { AirConditionerService } from 'src/app/service/air-conditioner.service';
 import { Output, EventEmitter } from '@angular/core';
 import { IAirConditioner } from 'src/app/model/air-conditioner';
 import Swal from 'sweetalert2';
 import { TranslateService } from '@ngx-translate/core';
+import { IAirConditionerBrand } from 'src/app/model/air-conditioner-brand';
 
 @Component({
   selector: 'app-filter-and-sort',
@@ -19,6 +20,7 @@ export class FilterAndSortComponent implements OnInit {
   @Output() airConditionersFiltered = new EventEmitter<IAirConditioner[]>();
   @Output() size = new EventEmitter<number>();
 
+  public airConditionerBrands: IAirConditionerBrand[] = [];
   public mediaSub!: Subscription;
   public deviceSmXs: boolean = false;
   public filterDto: FilterDto;
@@ -45,13 +47,22 @@ export class FilterAndSortComponent implements OnInit {
       sortBy: '',
       minPrice: 15000,
       maxPrice: 50000,
-      powerArray: []
+      powerArray: [],
+      filterByBrand: ""
     };
   }
 
   ngOnInit(): void {
+    this.getAllBrands();
     this.initFilterForm();
     this.setDeviceSize();
+  }
+
+  private getAllBrands(): void {
+    this.airConditionerService.getAllBrands()
+      .subscribe((brands) => {
+        this.airConditionerBrands = brands.data.brands;
+      });
   }
 
   private initFilterForm(): void {
@@ -59,7 +70,8 @@ export class FilterAndSortComponent implements OnInit {
       sortByControl: [''],
       minPriceControl: new FormControl(this.minValue),
       maxPriceControl: new FormControl(this.maxValue),
-      powerArrayControl: this.fb.array([])
+      powerArrayControl: this.fb.array([]),
+      filterByBrandControl: [null]
     });
   }
 
@@ -93,7 +105,11 @@ export class FilterAndSortComponent implements OnInit {
       minPrice: this.filterForm.get('minPriceControl')?.value,
       maxPrice: this.filterForm.get('maxPriceControl')?.value,
       powerArray: formattedPowerArray,
+      filterByBrand: this.filterForm.get('filterByBrandControl')?.value !== undefined ?
+                     this.filterForm.get('filterByBrandControl')?.value : null
     };
+
+    console.log(this.filterDto);
 
     if(this.filterDto.maxPrice - this.filterDto.minPrice > 0) {
       this.airConditionerService.getAllAirConditionersFiltered(this.filterDto)

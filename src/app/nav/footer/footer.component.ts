@@ -8,6 +8,8 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class FooterComponent implements OnInit {
 
+  year = Date.now();
+
   constructor(private translate: TranslateService) { }
 
   ngOnInit(): void {

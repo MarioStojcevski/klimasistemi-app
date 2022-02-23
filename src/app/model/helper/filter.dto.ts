@@ -3,4 +3,5 @@ export interface FilterDto {
     minPrice: number;
     maxPrice: number;
     powerArray: number[];
+    filterByBrand: string;
 }

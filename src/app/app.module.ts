@@ -13,6 +13,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core'; 
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { FacebookModule } from 'ngx-facebook';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -40,7 +41,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       },
       defaultLanguage: 'mk'
-    })
+    }),
+    FacebookModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

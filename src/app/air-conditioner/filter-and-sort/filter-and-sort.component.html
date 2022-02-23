@@ -46,6 +46,12 @@
       </mat-card-content>
   </mat-card>
   <section class="filter-button mt-3">
+    <mat-form-field appearance="fill" class="pr-3">
+      <mat-select formControlName="filterByBrandControl">
+        <mat-option label=""></mat-option>
+        <mat-option *ngFor="let brand of airConditionerBrands" [value]="brand.id">{{brand.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
     <button type="submit" mat-raised-button color="accent">{{ "APP.AIR_CONDITIONERS.FILTER.FILTER" | translate }}</button>
   </section>
 </form>
