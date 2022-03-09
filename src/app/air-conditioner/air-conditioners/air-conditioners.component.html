@@ -23,7 +23,7 @@
           <mat-card-header>
             <div class="row">
               <div class="col-3">
-                <img id="ac-brand-image-lg" src="{{ac.brand.logoImageURL}}">
+                <img id="ac-brand-image-lg" src="http://localhost:8081/{{ac.brand.logoImageURL}}">
               </div>
               <div class="col-9" id="model-name-col">
                 <h2 matTooltip="{{ac.modelName}}">{{ac.modelName}}</h2>
@@ -32,7 +32,7 @@
           </mat-card-header>
 
           <div class="center-div pt-4">
-            <img id="ac-image" mat-card-image src="https://klimi.mk/public/storage/proizvodi/4ehg8179pPNXOtECTi9UxCQD9gYT9r8EKbp425V9.png">
+            <img id="ac-image" mat-card-image src="http://localhost:8081/{{ac.imageIndoorURL}}">
           </div>
           <mat-card-content>
             <div class="row">
@@ -65,7 +65,7 @@
               </div>
 
               <div class="col-4" style="float: right">
-                <h3>{{ ac.price | currency:'MKD'  }}</h3>
+                <h3><b>{{ ac.price | currency:'MKD '  }}</b></h3>
               </div>
 
             </div>
@@ -91,7 +91,7 @@
           
           <div class="col-12">
             <div class="row">
-              <img id="ac-brand-image-sm" src="{{ac.brand.logoImageURL}}">
+              <img id="ac-brand-image-sm" src="http://localhost:8081/{{ac.brand.logoImageURL}}">
             </div>
 
             <div class="row" id="model-name-col">
@@ -102,7 +102,7 @@
         </mat-card-header>
 
         <div class="center-div pt-4">
-          <img id="ac-image" mat-card-image src="https://klimi.mk/public/storage/proizvodi/4ehg8179pPNXOtECTi9UxCQD9gYT9r8EKbp425V9.png">
+          <img id="ac-image" mat-card-image src="http://localhost:8081/{{ac.imageIndoorURL}}">
         </div>
         <mat-card-content>
           <div class="row">
@@ -135,7 +135,7 @@
             </div>
 
             <div class="col-4" style="float: right">
-              <h3>{{ ac.price | currency:'MKD'  }}</h3>
+              <h3><b>{{ ac.price | currency:'MKD '  }}</b></h3>
             </div>
 
           </div>

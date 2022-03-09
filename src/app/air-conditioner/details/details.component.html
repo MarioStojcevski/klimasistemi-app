@@ -1,10 +1,10 @@
-<mat-card class="ac-card mat-elevation-z3 mt-5" *ngIf="!deviceMdSmXs">
+<mat-card class="ac-card mb-5 mat-elevation-z3 mt-5" *ngIf="!deviceMdSmXs">
 
     <mat-card-header class="center-div">
       
       <div class="row">
         <div class="col-6">
-          <img id="ac-brand-image-lg" src="{{ac.brand.logoImageURL}}">
+          <img id="ac-brand-image-lg" src="http://localhost:8081/{{ac.brand.logoImageURL}}">
         </div>
 
         <div class="col-6" id="model-name-col">
@@ -15,10 +15,10 @@
     </mat-card-header>
 
     <div class="center-div pt-4">
-      <img id="ac-image" mat-card-image src="https://klimi.mk/public/storage/proizvodi/4ehg8179pPNXOtECTi9UxCQD9gYT9r8EKbp425V9.png">
+      <img id="ac-image" mat-card-image src="http://localhost:8081/{{ac.imageIndoorURL}}">
     </div>
     <div class="center-div pt-4">
-      <img id="ac-image" mat-card-image src="https://5.imimg.com/data5/SELLER/Default/2021/2/EZ/LC/UW/3282765/air-conditioner-outdoor-unit-500x500.jpg">
+      <img id="ac-image" mat-card-image src="http://localhost:8081/{{ac.imageOutdoorURL}}">
     </div>
     <mat-card-content class="center-div">
       <div class="row mt-3">
@@ -51,7 +51,7 @@
         </div>
 
         <div class="col-4" style="float: right">
-          <h3>{{ ac.price | currency:'MKD'  }}</h3>
+          <h3><b>{{ ac.price | currency:'MKD '  }}</b></h3>
         </div>
 
       </div>
@@ -64,13 +64,13 @@
 </mat-card>
 
 <!--For medium and smaller devices-->
-<mat-card class="ac-card mat-elevation-z3 mt-5" *ngIf="deviceMdSmXs">
+<mat-card class="ac-card mb-5 mat-elevation-z3 mt-5" *ngIf="deviceMdSmXs">
 
   <mat-card-header class="center-div">
     
     <div class="col" style="margin: auto; max-width: 300px;">
       <div class="row">
-        <img id="ac-brand-image-sm" src="{{ac.brand.logoImageURL}}">
+        <img id="ac-brand-image-sm" src="http://localhost:8081/{{ac.brand.logoImageURL}}">
       </div>
 
       <div class="row" id="model-name-col">
@@ -81,10 +81,10 @@
   </mat-card-header>
 
   <div class="center-div pt-4">
-    <img id="ac-image" mat-card-image src="https://klimi.mk/public/storage/proizvodi/4ehg8179pPNXOtECTi9UxCQD9gYT9r8EKbp425V9.png">
+    <img id="ac-image" mat-card-image src="http://localhost:8081/{{ac.imageIndoorURL}}">
   </div>
   <div class="center-div pt-4">
-    <img id="ac-image" mat-card-image src="https://5.imimg.com/data5/SELLER/Default/2021/2/EZ/LC/UW/3282765/air-conditioner-outdoor-unit-500x500.jpg">
+    <img id="ac-image" mat-card-image src="http://localhost:8081/{{ac.imageOutdoorURL}}">
   </div>
   <mat-card-content class="center-div">
     <div class="col mt-3">
@@ -117,7 +117,7 @@
       </div>
 
       <div class="row" style="margin: auto; max-width: 150px;">
-        <h2>{{ ac.price | currency:'MKD'  }}</h2>
+        <h2><b>{{ ac.price | currency:'MKD '  }}</b></h2>
       </div>
 
     </div>
