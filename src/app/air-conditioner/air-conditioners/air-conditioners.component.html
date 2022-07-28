@@ -23,7 +23,7 @@
           <mat-card-header>
             <div class="row">
               <div class="col-3">
-                <img id="ac-brand-image-lg" src="http://localhost:8081/{{ac.brand.logoImageURL}}">
+                <img id="ac-brand-image-lg" src="{{this.productionEnvironment.resourceBaseURL}}/{{ac.brand.logoImageURL}}">
               </div>
               <div class="col-9" id="model-name-col">
                 <h2 matTooltip="{{ac.modelName}}">{{ac.modelName}}</h2>
@@ -32,34 +32,34 @@
           </mat-card-header>
 
           <div class="center-div pt-4">
-            <img id="ac-image" mat-card-image src="http://localhost:8081/{{ac.imageIndoorURL}}">
+            <img id="ac-image" mat-card-image src="{{this.productionEnvironment.resourceBaseURL}}/{{ac.imageIndoorURL}}">
           </div>
           <mat-card-content>
             <div class="row">
 
               <div class="col-8">
                 <p>
-                  <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_TYPE" | translate }}</b> 
+                  <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_TYPE" | translate }}</b>
                   {{ac.type}}
                 </p>
                 <p>
-                  <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_ENERGY_CLASS" | translate }}</b> 
+                  <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_ENERGY_CLASS" | translate }}</b>
                   {{ac.energyClass}}
                 </p>
                 <p>
-                  <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_POWER" | translate }}</b> 
+                  <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_POWER" | translate }}</b>
                   {{ac.power}}W
                 </p>
                 <p>
-                  <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_COOLING_HEATING" | translate }}</b> 
+                  <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_COOLING_HEATING" | translate }}</b>
                   {{ac.workingTemperatureFrom}}℃ / {{ac.workingTemperatureTo}}℃
                 </p>
                 <p>
-                  <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_AREA" | translate }}</b> 
+                  <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_AREA" | translate }}</b>
                   {{ac.area}}㎡
                 </p>
                 <p>
-                  <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_GUARANTEE" | translate }}</b> 
+                  <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_GUARANTEE" | translate }}</b>
                   {{ac.guarantee}} {{ "APP.AIR_CONDITIONERS.LIST.MONTHS" | translate }}
                 </p>
               </div>
@@ -88,48 +88,48 @@
       <mat-card class="ac-card mat-elevation-z3">
 
         <mat-card-header>
-          
+
           <div class="col-12">
             <div class="row">
-              <img id="ac-brand-image-sm" src="http://localhost:8081/{{ac.brand.logoImageURL}}">
+              <img id="ac-brand-image-sm" src="{{this.productionEnvironment.resourceBaseURL}}/{{ac.brand.logoImageURL}}">
             </div>
 
             <div class="row" id="model-name-col">
               <h2 matTooltip="{{ac.modelName}}">{{ac.modelName}}</h2>
             </div>
           </div>
-          
+
         </mat-card-header>
 
         <div class="center-div pt-4">
-          <img id="ac-image" mat-card-image src="http://localhost:8081/{{ac.imageIndoorURL}}">
+          <img id="ac-image" mat-card-image src="{{this.productionEnvironment.resourceBaseURL}}/{{ac.imageIndoorURL}}">
         </div>
         <mat-card-content>
           <div class="row">
 
             <div class="col-8">
               <p>
-                <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_TYPE" | translate }}</b> 
+                <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_TYPE" | translate }}</b>
                 {{ac.type}}
               </p>
               <p>
-                <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_ENERGY_CLASS" | translate }}</b> 
+                <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_ENERGY_CLASS" | translate }}</b>
                 {{ac.energyClass}}
               </p>
               <p>
-                <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_POWER" | translate }}</b> 
+                <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_POWER" | translate }}</b>
                 {{ac.power}}W
               </p>
               <p>
-                <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_COOLING_HEATING" | translate }}</b> 
+                <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_COOLING_HEATING" | translate }}</b>
                 {{ac.workingTemperatureFrom}}℃ / {{ac.workingTemperatureTo}}℃
               </p>
               <p>
-                <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_AREA" | translate }}</b> 
+                <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_AREA" | translate }}</b>
                 {{ac.area}}㎡
               </p>
               <p>
-                <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_GUARANTEE" | translate }}</b> 
+                <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_GUARANTEE" | translate }}</b>
                 {{ac.guarantee}} {{ "APP.AIR_CONDITIONERS.LIST.MONTHS" | translate }}
               </p>
             </div>

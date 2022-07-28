@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { AirConditionerService } from 'src/app/service/air-conditioner.service';
 import { MediaObserver } from '@angular/flex-layout';
 import { Subscription } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { environment } from "../../../environments/environment.prod";
 
 @Component({
   selector: 'app-details',
@@ -16,7 +16,7 @@ export class DetailsComponent implements OnInit {
   public ac!: IAirConditioner;
   public mediaSub!: Subscription;
   public deviceMdSmXs: boolean = false;
-  public resourceBaseURL: string = environment.resourceBaseURL;
+  public productionEnvironment = environment;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -29,7 +29,7 @@ export class DetailsComponent implements OnInit {
     this.loadAirConditioner();
     this.mediaSub = this.mediaObserver.media$.subscribe(
       ((result) => {
-        this.deviceMdSmXs = result.mqAlias === 'md' || result.mqAlias === 'sm' || result.mqAlias === 'xs' ? true : false;
+        this.deviceMdSmXs = result.mqAlias === 'md' || result.mqAlias === 'sm' || result.mqAlias === 'xs';
     }));
   }
 
@@ -43,12 +43,6 @@ export class DetailsComponent implements OnInit {
       .subscribe((airConditionerResponse: any) => {
         this.ac = airConditionerResponse.data.airConditioner;
       })
-  }
-
-  public getBrandImage(brand: string) {
-    console.log(1);
-    console.log(this.resourceBaseURL + brand);
-    return `${this.resourceBaseURL}${brand}`;
   }
 
 }

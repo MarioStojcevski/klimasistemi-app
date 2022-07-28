@@ -2,8 +2,9 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { IAirConditioner } from 'src/app/model/air-conditioner';
 import { AirConditionerService } from 'src/app/service/air-conditioner.service';
 import { MediaObserver } from '@angular/flex-layout';
-import { filter, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
+import { environment } from "../../../environments/environment.prod";
 
 @Component({
   selector: 'app-air-conditioners',
@@ -16,7 +17,8 @@ export class AirConditionersComponent implements OnInit, OnDestroy {
   public noAirConditioners: boolean = false;
   public mediaSub!: Subscription;
   public deviceSmXs: boolean = false;
-  
+  public productionEnvironment = environment;
+
   constructor(
     public mediaObserver: MediaObserver,
     private translate: TranslateService,
@@ -26,7 +28,7 @@ export class AirConditionersComponent implements OnInit, OnDestroy {
     this.getAirConditionersSorted('price');
     this.mediaSub = this.mediaObserver.media$.subscribe(
       ((result) => {
-        this.deviceSmXs = result.mqAlias === 'sm' || result.mqAlias === 'xs' ? true : false;
+        this.deviceSmXs = result.mqAlias === 'sm' || result.mqAlias === 'xs';
     }));
   }
 
@@ -39,7 +41,7 @@ export class AirConditionersComponent implements OnInit, OnDestroy {
   }
 
   getSize(size: number) {
-    this.noAirConditioners = size == 0 ? true : false;
+    this.noAirConditioners = size == 0;
   }
 
   public getAirConditionersSorted(field: string): void {
