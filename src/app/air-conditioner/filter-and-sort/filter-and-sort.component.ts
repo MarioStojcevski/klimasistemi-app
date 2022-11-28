@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
 import { Subscription } from 'rxjs';
 import { FilterDto } from 'src/app/model/helper/filter.dto';
-import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { AirConditionerService } from 'src/app/service/air-conditioner.service';
 import { Output, EventEmitter } from '@angular/core';
 import { IAirConditioner } from 'src/app/model/air-conditioner';
@@ -23,7 +23,7 @@ export class FilterAndSortComponent implements OnInit {
   public mediaSub!: Subscription;
   public deviceSmXs: boolean = false;
   public filterDto: FilterDto;
-  public filterForm: FormGroup = new FormGroup({});
+  public filterForm: UntypedFormGroup = new UntypedFormGroup({});
   public minValue = 15000;
   public maxValue = 50000;
   checkboxData: Array<any> = [
@@ -38,7 +38,7 @@ export class FilterAndSortComponent implements OnInit {
   ];
 
   constructor(
-    public fb: FormBuilder,
+    public fb: UntypedFormBuilder,
     private airConditionerService: AirConditionerService,
     private translate: TranslateService,
     public mediaObserver: MediaObserver
@@ -67,8 +67,8 @@ export class FilterAndSortComponent implements OnInit {
   private initFilterForm(): void {
     this.filterForm = this.fb.group({
       sortByControl: [''],
-      minPriceControl: new FormControl(this.minValue),
-      maxPriceControl: new FormControl(this.maxValue),
+      minPriceControl: new UntypedFormControl(this.minValue),
+      maxPriceControl: new UntypedFormControl(this.maxValue),
       powerArrayControl: this.fb.array([]),
       filterByBrandControl: [null],
     });
@@ -82,11 +82,11 @@ export class FilterAndSortComponent implements OnInit {
   }
 
   public onCheckboxChange(e: any): void {
-    const powerArray: FormArray = this.filterForm.get(
+    const powerArray: UntypedFormArray = this.filterForm.get(
       'powerArrayControl'
-    ) as FormArray;
+    ) as UntypedFormArray;
     if (e.checked) {
-      powerArray.push(new FormControl(e.source.value));
+      powerArray.push(new UntypedFormControl(e.source.value));
     } else {
       for (let i = 0; i < powerArray.controls.length; i++) {
         if (powerArray.controls[i].value == e.source.value) {
