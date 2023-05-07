@@ -21,7 +21,6 @@ export class AirConditionersComponent implements OnInit, OnDestroy {
 
   constructor(
     public mediaObserver: MediaObserver,
-    private translate: TranslateService,
     private airConditionerService: AirConditionerService) { }
 
   ngOnInit(): void {
@@ -47,6 +46,7 @@ export class AirConditionersComponent implements OnInit, OnDestroy {
   public getAirConditionersSorted(field: string): void {
     this.airConditionerService.getAllAirConditionersSorted(field)
       .subscribe((result) => {
+        console.log(result.data.airConditioners);
         this.airConditioners = result.data.airConditioners;
       })
   }
