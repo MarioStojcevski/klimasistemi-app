@@ -6,7 +6,7 @@
   </div>
 </ng-container>
 
-<ng-container *ngIf="(airConditioners.length == 0) && !noAirConditioners">
+<ng-container *ngIf="(airConditionersFilteredByVisibliity.length == 0) && !noAirConditioners">
   <div class="mt-5 div-center">
     <mat-spinner color="accent"></mat-spinner>
   </div>
@@ -15,9 +15,9 @@
   </div>
 </ng-container>
 
-<div class="mt-2 mb-5 grid-list" *ngIf="airConditioners.length">
+<div class="mt-2 mb-5 grid-list" *ngIf="airConditionersFilteredByVisibliity.length">
     <mat-grid-list *ngIf="!deviceSmXs" cols="2" rowHeight="550px">
-      <mat-grid-tile *ngFor="let ac of airConditioners">
+      <mat-grid-tile *ngFor="let ac of airConditionersFilteredByVisibliity">
         <mat-card class="ac-card mat-elevation-z5">
 
           <mat-card-header>
@@ -84,7 +84,7 @@
 
   <!-- For small device-->
   <mat-grid-list *ngIf="deviceSmXs" cols="1" rowHeight="650px">
-    <mat-grid-tile *ngFor="let ac of airConditioners">
+    <mat-grid-tile *ngFor="let ac of airConditionersFilteredByVisibliity">
       <mat-card class="ac-card mat-elevation-z3">
 
         <mat-card-header>

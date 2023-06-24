@@ -3,7 +3,6 @@ import { IAirConditioner } from 'src/app/model/air-conditioner';
 import { AirConditionerService } from 'src/app/service/air-conditioner.service';
 import { MediaObserver } from '@angular/flex-layout';
 import { Subscription } from 'rxjs';
-import { TranslateService } from '@ngx-translate/core';
 import { environment } from "../../../environments/environment.prod";
 
 @Component({
@@ -14,6 +13,7 @@ import { environment } from "../../../environments/environment.prod";
 export class AirConditionersComponent implements OnInit, OnDestroy {
 
   public airConditioners: IAirConditioner[] = [];
+  public airConditionersFilteredByVisibliity: IAirConditioner[] = [];
   public noAirConditioners: boolean = false;
   public mediaSub!: Subscription;
   public deviceSmXs: boolean = false;
@@ -37,6 +37,9 @@ export class AirConditionersComponent implements OnInit, OnDestroy {
 
   getFiltered(filteredAirConditioners: IAirConditioner[]): void {
     this.airConditioners = filteredAirConditioners;
+
+    this.airConditionersFilteredByVisibliity = 
+      this.airConditioners.filter((airConditioner: IAirConditioner) => airConditioner.visible);
   }
 
   getSize(size: number) {
@@ -46,8 +49,10 @@ export class AirConditionersComponent implements OnInit, OnDestroy {
   public getAirConditionersSorted(field: string): void {
     this.airConditionerService.getAllAirConditionersSorted(field)
       .subscribe((result) => {
-        console.log(result.data.airConditioners);
         this.airConditioners = result.data.airConditioners;
+
+        this.airConditionersFilteredByVisibliity = 
+        this.airConditioners.filter((airConditioner: IAirConditioner) => airConditioner.visible);
       })
   }
 

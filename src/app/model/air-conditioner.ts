@@ -29,4 +29,5 @@ export interface IAirConditioner {
     outdoorUnitDimensionsY:     number;
     outdoorUnitDimensionsZ:     number;
     guarantee:                  number;
+    visible:                    boolean;
 }
