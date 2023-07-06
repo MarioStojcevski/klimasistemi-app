@@ -12,7 +12,18 @@
         },
         "AIR_CONDITIONERS": {
             "LIST": {
-                "AC_TYPE": "Тип:",
+                "AC_TYPE_HEADER": "Тип:",
+                "AC_TYPE": {
+                    "INVERTER_SPLIT_SYSTEMS": "Инвертерски сплит системи",
+                    "ART_COOL_SYSTEMS": "Арт Кул системи",
+                    "STANDARD_SPLIT_SYSTEMS": "Стандардни сплит системи",
+                    "HEAT_PUMP": "Топлосна пумпа",
+                    "PARAPET_CANTILEVER": "Парапетно-кантилевер",
+                    "STANDALONE": "Самостоен",
+                    "CHANNEL_SYSTEMS": "Канални системи",
+                    "CASSETTE_SPLIT_SYSTEMS": "Касетни сплит системи",
+                    "MOBILE_AIR_CONDITIONERS": "Мобилни клима уреди"
+                },
                 "AC_ENERGY_CLASS": "Енергетска класа:",
                 "AC_POWER": "Моќност:",
                 "AC_COOLING_HEATING": "Ладење/Греење:",

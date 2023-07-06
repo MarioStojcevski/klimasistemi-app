@@ -12,7 +12,18 @@
         },
         "AIR_CONDITIONERS": {
             "LIST": {
-                "AC_TYPE": "Type:",
+                "AC_TYPE_HEADER": "Type:",
+                "AC_TYPE": {
+                    "INVERTER_SPLIT_SYSTEMS": "Inverter split systems",
+                    "ART_COOL_SYSTEMS": "Art cool systems",
+                    "STANDARD_SPLIT_SYSTEMS": "Standard split systems",
+                    "HEAT_PUMP": "Heat pump",
+                    "PARAPET_CANTILEVER": "Parapet cantilever",
+                    "STANDALONE": "Standalone",
+                    "CHANNEL_SYSTEMS": "Channel systems",
+                    "CASSETTE_SPLIT_SYSTEMS": "Cassette split systems",
+                    "MOBILE_AIR_CONDITIONERS": "Mobile air conditioners"
+                },
                 "AC_ENERGY_CLASS": "Energy class:",
                 "AC_POWER": "Power:",
                 "AC_COOLING_HEATING": "Cooling/Heating:",

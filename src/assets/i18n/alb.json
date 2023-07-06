@@ -12,7 +12,18 @@
         },
         "AIR_CONDITIONERS": {
             "LIST": {
-                "AC_TYPE": "Lloji:",
+                "AC_TYPE_HEADER": "Lloji:",
+                "AC_TYPE": {
+                    "INVERTER_SPLIT_SYSTEMS": "Sistemet inverter split",
+                    "ART_COOL_SYSTEMS": "Sistemet Art Cool",
+                    "STANDARD_SPLIT_SYSTEMS": "Sistemet standard split",
+                    "HEAT_PUMP": "Pompë ngrohje",
+                    "PARAPET_CANTILEVER": "Parapet cantilever",
+                    "STANDALONE": "Standalone",
+                    "CHANNEL_SYSTEMS": "Sistemet kanal",
+                    "CASSETTE_SPLIT_SYSTEMS": "Sistemet cassette split",
+                    "MOBILE_AIR_CONDITIONERS": "Kondicionerët mobil"
+                },
                 "AC_ENERGY_CLASS": "Klasa e energjisë:",
                 "AC_POWER": "Fuqia:",
                 "AC_COOLING_HEATING": "Ftohje/Ngrohje:",

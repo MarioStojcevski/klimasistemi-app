@@ -39,8 +39,8 @@
 
               <div class="col-8">
                 <p>
-                  <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_TYPE" | translate }}</b>
-                  {{ac.type}}
+                  <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_TYPE_HEADER" | translate }}</b>
+                  {{ "APP.AIR_CONDITIONERS.LIST.AC_TYPE." + ac.type.toString() | translate }}
                 </p>
                 <p>
                   <b>{{ "APP.AIR_CONDITIONERS.LIST.AC_ENERGY_CLASS" | translate }}</b>
